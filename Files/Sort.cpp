@@ -15,19 +15,19 @@ int Sort(std::vector<int>& values, int l, int r)
     return less;
 }
 
-void QuickSort(std::vector<int>& values, int l, int r)
+void Quick(std::vector<int>& values, int l, int r)
 {
     if (l < r)
     {
         int q = Sort(values, l, r);
-        QuickSort(values, l, q - 1);
-        QuickSort(values, q + 1, r);
+        Quick(values, l, q - 1);
+        Quick(values, q + 1, r);
     }
 }
 
 void QuickSort(std::vector<int>& values)
 {
     if (!values.empty()) {
-        QuickSort(values, 0, values.size() - 1);
+        Quick(values, 0, values.size() - 1);
     }
 }
